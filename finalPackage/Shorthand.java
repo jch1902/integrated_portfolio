@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import chn.util.ConsoleIO;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -17,7 +16,6 @@ import javax.swing.JButton;
 
 public class Shorthand extends JFrame {
 
-	private static ConsoleIO newConsole = new ConsoleIO();
     private static String userInput = "";
     private static boolean keepRunning;
     private static String[] splitString = {};

@@ -1,11 +1,14 @@
 package ClassFileIO;
- /**
+
+import java.util.Scanner;
+
+/**
  * Translates phrases into piglatin
  *
  * @author Sydney Hsieh
  * @version 
  */
-import chn.util.ConsoleIO;
+
 public class PigLatinator
 {
      public static boolean hasVow(char[] word)
@@ -53,8 +56,9 @@ public class PigLatinator
         System.out.println("Welcome to the PigLatin Converter!");
         System.out.print("Enter a phrase: ");
        
-        ConsoleIO console = new ConsoleIO();
-        String str = console.readLine();
+        Scanner newScanner = new Scanner(System.in);
+        String str = newScanner.nextLine();
+         
        
         String[] splitted = str.split("\\s+|.");
 //       for (int i=0;i<splitted.length;i++) {
