@@ -14,6 +14,7 @@ import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.JTextPane;
 
 public class MenuControl extends JFrame {
 
@@ -98,6 +99,17 @@ public class MenuControl extends JFrame {
 			}
 		});
 		mnPoly.add(mntmPoly);
+		
+		JMenu mnLink = new JMenu("Linked List");
+		menuBar.add(mnLink);
+		JMenuItem mntmLink = new JMenuItem("Run");
+		mntmLink.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LinkedListUI frame = new LinkedListUI();
+				frame.setVisible(true);
+			}
+		});
+		mnLink.add(mntmLink);
 		
 		JLabel lblWelcomeToThe = new JLabel("Welcome to the menu!");
 		lblWelcomeToThe.setForeground(Color.WHITE);
