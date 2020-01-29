@@ -23,6 +23,8 @@ public class LinkedListUI extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				LinkedList newList = new LinkedList();
+				newList.createList();
 			}
 		});
 	}
@@ -38,5 +40,5 @@ public class LinkedListUI extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 	}
-
 }
+
