@@ -40,8 +40,13 @@ public class LinkedListStackDemo {
 		}
 	}
 	public String returnArrayList() {
-		return printedString.get(0).toString() + "\n" + printedString.get(1).toString() + "\n"
-				+ printedString.get(2).toString() + "\n"+ "\n";
+		String newString = "";
+		int x = 0;
+		for(int i = 0; i < printedString.size(); i++) {
+			newString += printedString.get(x).toString() + "\n";
+			x++;
+		}
+		return newString;
 	}
 	
 }

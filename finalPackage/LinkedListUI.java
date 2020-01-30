@@ -12,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class LinkedListUI extends JFrame {
 
@@ -29,9 +30,6 @@ public class LinkedListUI extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				System.out.println("---Queue---");
-				LinkedListQueueDemo newQueueList = new LinkedListQueueDemo();
-				newQueueList.createList();
 			}
 		});
 	}
@@ -48,6 +46,8 @@ public class LinkedListUI extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblList = new JLabel("Click the buttons on the side to make a list display");
+		lblList.setHorizontalAlignment(SwingConstants.CENTER);
+		lblList.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 8));
 		contentPane.add(lblList, BorderLayout.CENTER);
 		
 		JButton btnStack = new JButton("Stacked List");
@@ -56,6 +56,9 @@ public class LinkedListUI extends JFrame {
 				System.out.println("---Stack---");
 				LinkedListStackDemo newStackedList = new LinkedListStackDemo();
 				newStackedList.createList();
+				
+				lblList.setText("");
+				lblList.setFont(lblList.getFont().deriveFont(6f));
 				lblList.setText("<html>" + newStackedList.returnArrayList()
 															.replaceAll("<","&lt;")
 															.replaceAll(">", "&gt;")
@@ -71,6 +74,14 @@ public class LinkedListUI extends JFrame {
 				System.out.println("---Queue---");
 				LinkedListQueueDemo newQueueList = new LinkedListQueueDemo();
 				newQueueList.createList();
+				
+				lblList.setText("");
+				lblList.setFont(lblList.getFont().deriveFont(6f));
+				lblList.setText("<html>" + newQueueList.returnArrayList()
+															.replaceAll("<","&lt;")
+															.replaceAll(">", "&gt;")
+															.replaceAll("\n", "<br/>")
+															+ "</html>");
 			}
 		});
 		contentPane.add(btnQueue, BorderLayout.EAST);
