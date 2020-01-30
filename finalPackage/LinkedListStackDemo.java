@@ -3,31 +3,31 @@ package finalPackage;
 import java.util.*;
 
 public class LinkedListStackDemo {
-	private static LinkedList<String> newList;
+	private static StackConstructor newList;
 	private static ArrayList printedString;
 	public LinkedListStackDemo(){
-		newList = new LinkedList<String>();
+		newList = new StackConstructor();
 	}
 	public static void createList() {
 		String[] wishList = {"Bike","Airpods","Macbook","Microphone"};
-		int x = wishList.length - 1;
+		int x = 0;
 		printedString = new ArrayList();
 		
 		System.out.println("Wish List: " + newList);
 		printedString.add("Wish List: " + newList);
 		for(int i = 0; i < wishList.length; i++) {
-			newList.addLast(wishList[x]);
+			newList.push(wishList[x]);
 			
 			System.out.println("Wish List: (Added " + wishList[x] + ") "+ newList);
 			printedString.add("Wish List: (Added " + wishList[x] + ") "+ newList);
 			
-			x--;
+			x++;
 		}
 		
 		System.out.println("Wish list is full. Let's go buy stuff and remove it from the list.");
 		printedString.add("Wish list is full. Let's go buy stuff and remove it from the list.");
 		
-		x = 0;
+		x--;
 		for(int i = 0; i < wishList.length; i++) {
 			newList.removeLast();
 			if(newList != null) {
@@ -36,7 +36,7 @@ public class LinkedListStackDemo {
 			}else {
 				System.out.println("Wish List: Empty ");
 			}
-			x++;
+			x--;
 		}
 	}
 	public String returnArrayList() {
