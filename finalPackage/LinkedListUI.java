@@ -23,8 +23,12 @@ public class LinkedListUI extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				LinkedList newList = new LinkedList();
-				newList.createList();
+				System.out.println("---Queue---");
+				LinkedListQueueDemo newQueueList = new LinkedListQueueDemo();
+				newQueueList.createList();
+				System.out.println("---Stack---");
+				LinkedListStackDemo newStackedList = new LinkedListStackDemo();
+				newStackedList.createList();
 			}
 		});
 	}
