@@ -16,7 +16,7 @@ public class LinkedListQueueDemo {
 		System.out.println("Shopping List: " + newList);
 		printedString.add("Shopping List: " + newList);
 		for(int i = 0; i < shoppingList.length; i++) {
-			newList.push(shoppingList[x]);
+			newList.addLast(shoppingList[x]);
 			
 			System.out.println("Shopping List: (Added " + shoppingList[x] + ") "+ newList);
 			printedString.add("Shopping List: (Added " + shoppingList[x] + ") "+ newList);
@@ -26,9 +26,9 @@ public class LinkedListQueueDemo {
 		
 		System.out.println("Shopping list is full. Let's go buy stuff and remove it from the list.");
 		printedString.add("Shopping list is full. Let's go buy stuff and remove it from the list.");
-		
+		x = 0;
 		for(int i = 0; i < shoppingList.length; i++) {
-			x--;
+			
 			newList.pop();
 			if(newList != null) {
 				System.out.println("Shopping List: (Bought " + shoppingList[x] + ") " + newList);
@@ -36,6 +36,7 @@ public class LinkedListQueueDemo {
 			}else {
 				System.out.println("Shopping List: Empty ");
 			}
+			x++;
 			
 		}
 	}

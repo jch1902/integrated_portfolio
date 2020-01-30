@@ -10,18 +10,18 @@ public class LinkedListStackDemo {
 	}
 	public static void createList() {
 		String[] wishList = {"Bike","Airpods","Macbook","Microphone"};
-		int x = 0;
+		int x = wishList.length - 1;
 		printedString = new ArrayList();
 		
 		System.out.println("Wish List: " + newList);
 		printedString.add("Wish List: " + newList);
 		for(int i = 0; i < wishList.length; i++) {
-			newList.push(wishList[x]);
+			newList.addLast(wishList[x]);
 			
 			System.out.println("Wish List: (Added " + wishList[x] + ") "+ newList);
 			printedString.add("Wish List: (Added " + wishList[x] + ") "+ newList);
 			
-			x++;
+			x--;
 		}
 		
 		System.out.println("Wish list is full. Let's go buy stuff and remove it from the list.");
