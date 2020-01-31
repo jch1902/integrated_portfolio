@@ -1,5 +1,7 @@
 package finalPackage;
 
+import java.util.ArrayList;
+
 import finalPackage.QueueConstructor.Node;
 
 public class QueueConstructor {
@@ -7,53 +9,81 @@ public class QueueConstructor {
 		//type of data put inside the node
 		String data;
 		
-		//head of linked list
-		Node head;
+		//next of linked list
+		Node next;
+		
+		Node tail;
 	}
-	Node top;
+	static Node list;
+	static Node firstNode;
 	QueueConstructor() {
 		//avoid nullpointerexception
-		this.top = null;
+		this.list = null;
 	}
 	public boolean isEmpty() {//checks for empty node
-		return(top == null);
+		return(list == null);
 	}
 	public void push(String string) {
 		//sets new node with inputed data
 		Node position = new Node();
 		position.data = string;
 		
-		//sets head node to latest to the top
-		position.head = top;
+		//adds next node to list node
+		position.next = list;
 		//resets top node
-		top = position;
+		list = position;
 	}
+	public void setFirstNode(String string) {
+		//sets new node with inputed data
+		Node position = new Node();
+		position.data = string;
+		
+		firstNode = position;
+	}
+	public void pop() {//remove very first node
+		ArrayList newArray = new ArrayList();
+		Node temp = list;
+		int x = 0;
+		
+		while(temp.next != null) {
+			if(temp.next.data == firstNode.data) {
+				newArray.add(temp.data);
+//				System.out.println(newArray.get(x).toString()); --for debugging purposes
+				setFirstNode(temp.data);
 
-	public void removeLast() {
-		 if (top == null) 
-	            return; 
-	  
-	        // Move the head pointer to the next node 
-	        Node temp = top; 
-	        top = top.head; 
-	  
-	        return top; 
+				break;
+			}else {
+				newArray.add(temp.data);
+				temp = temp.next;
+//				System.out.println(newArray.get(x).toString()); --for debugging purposes
+				
+			}
+			x++;
+		}
+		temp = null;
+		list = null;
+		int y = newArray.size();
+		for(int i = y; i > 0; i--) {
+			push(newArray.get(y-1).toString());
+			y--;
+		}
 		
 	}
 	public String toString() {
-		Node check = top;
+		Node check = list;
 		Node previousNode = null;
 		String returnString = "";
 		while(check != null) {
-			returnString+= check.data;
+			returnString+= " " + check.data;
 			
 			previousNode = check;
 			//check node keeps changing it to the next node
-			check = check.head;
+			check = check.next;
 			
 			
 		}
 		return returnString;
 	}
+
 
 }

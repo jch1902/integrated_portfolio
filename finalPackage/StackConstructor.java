@@ -7,6 +7,7 @@ public class StackConstructor {
 		
 		//head of linked list
 		Node head;
+
 	}
 	Node top;
 	StackConstructor() {
