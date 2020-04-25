@@ -1,10 +1,14 @@
 package finalPackage;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import finalPackage.QueueConstructor.Node;
 
 public class QueueConstructor {
+	
+	private LinkedList headNode;
+	
 	public class Node{
 		//type of data put inside the node
 		String data;
