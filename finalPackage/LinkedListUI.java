@@ -159,6 +159,17 @@ public class LinkedListUI extends JFrame {
 			}
 		});
 		mnLink.add(mntmLink);
+		JMenu mnPackageSorter = new JMenu("Package Sorter");
+		menuBar.add(mnPackageSorter);
+		
+		JMenuItem mntmPackageSorter = new JMenuItem("Run");
+		mntmPackageSorter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PackageSorterUI frame = new PackageSorterUI();
+				frame.setVisible(true);
+			}
+		});
+		mnPackageSorter.add(mntmPackageSorter);
 	}
 }
 

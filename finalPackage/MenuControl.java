@@ -111,6 +111,18 @@ public class MenuControl extends JFrame {
 		});
 		mnLink.add(mntmLink);
 		
+		JMenu mnPackageSorter = new JMenu("Package Sorter");
+		menuBar.add(mnPackageSorter);
+		
+		JMenuItem mntmPackageSorter = new JMenuItem("Run");
+		mntmPackageSorter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PackageSorterUI frame = new PackageSorterUI();
+				frame.setVisible(true);
+			}
+		});
+		mnPackageSorter.add(mntmPackageSorter);
+		
 		JLabel lblWelcomeToThe = new JLabel("Welcome to the menu!");
 		lblWelcomeToThe.setForeground(Color.WHITE);
 		lblWelcomeToThe.setFont(new Font("Tahoma", Font.BOLD, 23));

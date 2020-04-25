@@ -122,13 +122,25 @@ public class PackageSorterUI extends JFrame {
 		});
 		mnLink.add(mntmLink);
 		
+		JMenu mnPackageSorter = new JMenu("Package Sorter");
+		menuBar.add(mnPackageSorter);
+		
+		JMenuItem mntmPackageSorter = new JMenuItem("Run");
+		mntmPackageSorter.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PackageSorterUI frame = new PackageSorterUI();
+				frame.setVisible(true);
+			}
+		});
+		mnPackageSorter.add(mntmPackageSorter);
+		
 		newSorter = new PackageSorter();
 		newSorter.addItems();
 		System.out.println(newSorter);
 		uiList = new List();
 		uiList.setMultipleMode(false);
 		uiList.setBounds(10, 10, 392, 198);
-		updateList();
+		updateList(false);
 		contentPane.add(uiList);
 		
 		JButton sortButton = new JButton("Sort");
@@ -136,16 +148,22 @@ public class PackageSorterUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				newSorter.listType = ListType.Insert;
 				newSorter.InsertionSort();
-				uiList.removeAll();
-				updateList();
+				updateList(true);
 				System.out.println(newSorter);
 			}
 		});
 		contentPane.add(sortButton, BorderLayout.EAST);
 	}
-	private void updateList() {
+	private void updateList(boolean hasValue) {
 		List list = new List();
 		tempArray = newSorter.getItems();
+		if(hasValue) {
+			int x = tempArray.size()-1;
+			for(int i = tempArray.size()-1; i >= 0 ; i--) {
+				uiList.remove(i);
+				x--;
+			}
+		}
 		for(int x = 0; x < tempArray.size(); x++) {
 			list.add((String) tempArray.get(x));
 		}
